@@ -1,0 +1,16 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+Thumbs.db
+# Add model weights only when redistribution rights and file size are acceptable.
+models/*.h5
+models/*.keras
+
+.venv/
+.env
+__pycache__/
+*.pyc

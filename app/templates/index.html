@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183c2c">
+  <meta name="description" content="EcoCycle AI helps people understand e-waste, explore safer disposal options, and make more informed reuse and recycling decisions.">
+  <title>EcoCycle AI — Give electronics a better next chapter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="announcement"><span class="pulse"></span> A more thoughtful way to handle electronic waste <span class="announcement-note">Local-first · Privacy-conscious</span></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="EcoCycle AI home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 5c-8 0-13 7-12 14 1 5 5 8 10 8h3v-5h-3c-3 0-5-2-5-5 0-4 3-7 7-7 3 0 5 1 7 4l4-2C28 8 24 5 20 5Z" fill="currentColor"/><path d="M28 15c-1 6-5 10-11 11l2 5c8-2 13-8 14-15l-5-1Z" fill="#d6e7b5"/><path d="M13 28c2 3 5 5 9 6l2-5c-3 0-5-1-7-3l-4 2Z" fill="#e8c89e"/></svg></span>
+      <span class="brand-name">eco<span>cycle</span><small>INTELLIGENT E-WASTE CARE</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#how">How it works</a><a href="#tools">Tools</a><a href="#learn">Learn</a><a href="#history">Your scans</a>
+    </nav>
+    <a class="header-cta" href="#analyzer">Analyze an item <span aria-hidden="true">↗</span></a>
+    <button class="mobile-menu" id="mobileMenu" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  </header>
+
+  <main id="home">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-icon">✳</span> THE CIRCULAR FUTURE STARTS HERE</div>
+        <h1>Give your old tech<br> a <em>better next chapter.</em></h1>
+        <p class="hero-lead">A little clarity goes a long way. Identify electronic waste, understand safer next steps, and discover when to repair, reuse, donate, or recycle.</p>
+        <div class="hero-actions"><a class="button button-dark" href="#analyzer">Start with a photo <span>↗</span></a><a class="text-link" href="#how"><span class="play-icon">▶</span> See how it works</a></div>
+        <div class="trust-row"><div class="avatar-stack"><span>♻</span><span>↻</span><span>✳</span></div><p><strong>Better decisions, less waste.</strong><br><span>Guidance designed for real-world next steps.</span></p></div>
+      </div>
+      <div class="hero-visual" aria-label="Illustration of electronics being sorted for reuse and recycling">
+        <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+        <div class="visual-label label-top"><span class="label-dot"></span> SMALL ACTION, BIGGER CYCLE</div>
+        <div class="device-card phone-card"><div class="phone-camera"></div><div class="phone-screen"><span class="phone-leaf">✳</span><span>RE:USE</span></div><div class="phone-bottom"></div></div>
+        <div class="device-card board-card"><div class="board-line line-a"></div><div class="board-line line-b"></div><div class="board-chip"></div><span class="board-node node-a"></span><span class="board-node node-b"></span><span class="board-node node-c"></span></div>
+        <div class="leaf-shape leaf-a">✳</div><div class="leaf-shape leaf-b">✦</div>
+        <div class="floating-note"><span class="floating-icon">↗</span><div><strong>Repair. Reuse. Recover.</strong><small>Choose the next best step.</small></div></div>
+        <div class="visual-caption">THOUGHTFUL TECH, CIRCULAR TOMORROW.</div>
+      </div>
+    </section>
+
+    <section class="proof-strip shell" aria-label="Product principles">
+      <div><span class="proof-icon">◎</span><span><strong>Understand the item</strong><small>Image-based classification, when model is configured</small></span></div>
+      <div><span class="proof-icon">↻</span><span><strong>Keep value in circulation</strong><small>Explore repair and reuse before disposal</small></span></div>
+      <div><span class="proof-icon">⌁</span><span><strong>Choose safer next steps</strong><small>Practical guidance, clear limitations</small></span></div>
+    </section>
+
+    <section class="section shell" id="analyzer">
+      <div class="section-heading"><div><div class="eyebrow">01 / THE SMART SORTER</div><h2>Let’s find a better<br><em>next step for your tech.</em></h2></div><p>Upload a clear photo of one electronic item. The app will validate the image and, when a trained model is configured, return a category and confidence score.</p></div>
+      <div class="analyzer-grid">
+        <div class="upload-panel panel">
+          <div class="panel-top"><span class="step-tag">STEP 01</span><span class="privacy-tag">⌑ Your image stays local to this app</span></div>
+          <h3>Bring your item into focus.</h3><p class="subtle">One item per photo works best. JPG, PNG or WebP · Up to 8 MB.</p>
+          <form id="uploadForm">
+            <label class="drop-zone" id="dropZone" for="imageInput">
+              <input id="imageInput" type="file" name="image" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp" hidden>
+              <span class="upload-symbol">↑</span><strong>Drop an image here, or <u>browse files</u></strong><small>Use a well-lit photo with the item clearly visible.</small>
+              <img id="imagePreview" alt="Selected item preview" hidden>
+            </label>
+            <div class="file-meta" id="fileMeta" hidden><span id="fileName"></span><button type="button" class="remove-file" id="removeFile" aria-label="Remove selected image">×</button></div>
+            <button class="button button-green full-button" id="analyzeButton" type="submit">Analyze image <span>↗</span></button>
+            <p class="microcopy">No image is stored by the server after processing. Scan history is saved in this browser only.</p>
+          </form>
+          <div class="status-line" id="statusLine" role="status" aria-live="polite"></div>
+        </div>
+        <div class="result-panel panel" id="resultPanel">
+          <div class="panel-top"><span class="step-tag">STEP 02</span><span class="result-status"><span class="status-dot"></span> RESULTS</span></div>
+          <div id="resultEmpty" class="result-empty"><div class="empty-illustration"><span class="empty-ring"></span><span class="empty-device">▱</span><span class="empty-spark">✳</span></div><h3>Your item’s next chapter<br>starts with a scan.</h3><p>Your result and practical recommendations will appear here after a successful model prediction.</p><div class="empty-footer"><span>01</span> Upload a photo <i>—</i> <span>02</span> Get guidance</div></div>
+          <div id="resultContent" hidden></div>
+        </div>
+      </div>
+      <div class="safety-note"><span>!</span><p><strong>Safety first.</strong> Image classification is a guide, not a safety inspection. Never open or dismantle electronics based on a prediction. Damaged or swollen batteries need specialist handling.</p></div>
+    </section>
+
+    <section class="section decision-section" id="tools">
+      <div class="shell">
+        <div class="section-heading"><div><div class="eyebrow">02 / THE CIRCULAR TOOLKIT</div><h2>Not everything old<br>belongs in the <em>bin.</em></h2></div><p>Make a more informed decision with simple tools for reuse, impact awareness, and finding a local starting point.</p></div>
+        <div class="tool-grid">
+          <article class="tool-card decision-card"><div class="tool-icon icon-cream">↗</div><span class="tool-index">TOOL 01</span><h3>Choose your next move</h3><p>Answer a few quick questions to compare repair, donation, resale, and recycling pathways.</p><button class="inline-action" data-open="decisionModal">Start the decision guide <span>→</span></button></article>
+          <article class="tool-card impact-card"><div class="tool-icon icon-sage">◎</div><span class="tool-index">TOOL 02</span><h3>See the bigger picture</h3><p>Explore an illustrative weight-based estimate of the e-waste you could keep out of general waste.</p><button class="inline-action" data-open="impactModal">Estimate an item’s weight <span>→</span></button></article>
+          <article class="tool-card finder-card"><div class="tool-icon icon-sand">⌖</div><span class="tool-index">TOOL 03</span><h3>Find a collection route</h3><p>Search a location in OpenStreetMap to discover nearby e-waste collection options.</p><button class="inline-action" data-open="finderModal">Explore local options <span>→</span></button></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="how">
+      <div class="section-heading"><div><div class="eyebrow">03 / SIMPLE BY DESIGN</div><h2>From uncertainty to<br><em>a better decision.</em></h2></div><p>Responsible e-waste management should feel approachable. EcoCycle helps turn a confusing pile of old tech into a clear next action.</p></div>
+      <div class="steps-grid">
+        <article class="step-card"><div class="step-number">01</div><div class="step-graphic graphic-upload">↑<span>IMG</span></div><h3>Show us the item</h3><p>Upload a clear image. The app checks the file and prepares it for the configured model.</p></article>
+        <article class="step-card"><div class="step-number">02</div><div class="step-graphic graphic-ai">✳<span>AI</span></div><h3>Understand the result</h3><p>Review the predicted category, confidence, and alternative predictions when inference is available.</p></article>
+        <article class="step-card"><div class="step-number">03</div><div class="step-graphic graphic-cycle">↻<span>GO</span></div><h3>Choose the next step</h3><p>Use the guidance, explore local collection options, and export a record for your own reference.</p></article>
+      </div>
+    </section>
+
+    <section class="learn-section" id="learn"><div class="shell learn-layout">
+      <div class="learn-copy"><div class="eyebrow">04 / THE REPAIR-FIRST MINDSET</div><h2>Before you recycle,<br><em>consider what’s next.</em></h2><p>Electronics contain materials and components worth recovering. The best option depends on condition, data privacy, battery safety, and local collection rules.</p><a class="button button-light" href="#learningCards">Explore the learning hub <span>↗</span></a></div>
+      <div class="learn-cards" id="learningCards">
+        <article><span class="learn-card-no">01</span><span class="learn-card-icon">⌁</span><h3>Protect your data</h3><p>Back up and erase personal data before donating, reselling, or handing over a device.</p></article>
+        <article><span class="learn-card-no">02</span><span class="learn-card-icon">✳</span><h3>Respect battery hazards</h3><p>Do not puncture, crush, charge, or ship a damaged or swollen battery as ordinary waste.</p></article>
+        <article><span class="learn-card-no">03</span><span class="learn-card-icon">↻</span><h3>Keep value in use</h3><p>Repair, reuse, donate, or resell working devices when practical and safe.</p></article>
+        <article><span class="learn-card-no">04</span><span class="learn-card-icon">⌖</span><h3>Check local rules</h3><p>Acceptance rules vary. Confirm the item type and opening details directly with the collection service.</p></article>
+      </div>
+    </div></section>
+
+    <section class="section shell history-section" id="history">
+      <div class="section-heading"><div><div class="eyebrow">05 / YOUR ACTIVITY</div><h2>A little progress,<br><em>kept in view.</em></h2></div><p>Recent successful scans are saved in this browser only. Clear this device’s history any time, or export a report for an individual scan.</p></div>
+      <div class="history-summary"><div><span class="summary-label">SUCCESSFUL SCANS</span><strong id="scanCount">0</strong><small>Saved on this device</small></div><div><span class="summary-label">MOST COMMON CATEGORY</span><strong id="topCategory">—</strong><small>Based on saved scans</small></div><div><span class="summary-label">HISTORY STATUS</span><strong class="local-status">Local only</strong><small>No account required</small></div></div>
+      <div class="history-table-wrap"><table class="history-table"><thead><tr><th>ITEM</th><th>DATE</th><th>CONFIDENCE</th><th>NEXT STEP</th><th></th></tr></thead><tbody id="historyBody"><tr><td colspan="5" class="history-empty">Your successful scans will appear here. No sample activity is shown.</td></tr></tbody></table></div>
+      <div class="history-actions"><span id="historyHint">Your history is stored in this browser.</span><button class="button button-outline" id="clearHistory">Clear history</button></div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact"><div class="shell footer-main"><div class="footer-brand"><a class="brand brand-light" href="#home"><span class="brand-mark">✳</span><span class="brand-name">eco<span>cycle</span><small>INTELLIGENT E-WASTE CARE</small></span></a><p>Make a thoughtful choice for every device, every time.</p></div><div class="footer-links"><div><strong>EXPLORE</strong><a href="#analyzer">AI sorter</a><a href="#tools">Decision tools</a><a href="#learn">Learning hub</a></div><div><strong>PROJECT</strong><a href="/api/health" target="_blank" rel="noopener">Service status</a><a href="#history">Your scan history</a><a href="#home">Back to top ↑</a></div></div></div><div class="shell footer-bottom"><span>© 2026 EcoCycle AI · Portfolio project</span><span>Designed around responsible reuse, repair, and recovery.</span></div></footer>
+
+  <dialog class="modal" id="decisionModal"><form method="dialog" class="modal-close-form"><button class="modal-close" aria-label="Close">×</button></form><div class="eyebrow">DECISION ASSISTANT</div><h2>What’s the best next move?</h2><p class="modal-intro">This is general decision support, not a verified service referral. Your answers stay in this browser.</p><div class="decision-questions"><label>Does the item work?<select id="works"><option value="unknown">Not sure</option><option value="yes">Yes, it works</option><option value="no">No, it does not work</option></select></label><label>Is it damaged, hot, leaking, or swollen?<select id="damaged"><option value="no">No known damage</option><option value="yes">Yes — damage or battery concern</option></select></label><label>Does it contain personal data?<select id="dataDevice"><option value="unknown">Not sure</option><option value="yes">Yes</option><option value="no">No</option></select></label><label>Would you be comfortable arranging repair or reuse?<select id="reuseReady"><option value="yes">Yes</option><option value="no">Prefer recycling</option></select></label></div><button class="button button-green full-button" id="decideButton" type="button">Show suggested pathway →</button><div class="decision-result" id="decisionResult" aria-live="polite" hidden></div></dialog>
+
+  <dialog class="modal" id="impactModal"><form method="dialog" class="modal-close-form"><button class="modal-close" aria-label="Close">×</button></form><div class="eyebrow">IMPACT ESTIMATOR</div><h2>Make the weight visible.</h2><p class="modal-intro">Estimate the mass of electronics you intend to route away from general waste. This is not a carbon-savings calculation.</p><label class="modal-field">Item category<select id="impactType"><option value="0.2">Small accessory / mouse — 0.2 kg</option><option value="0.8">Keyboard — 0.8 kg</option><option value="0.2">Mobile phone — 0.2 kg</option><option value="2.5">Printer — 2.5 kg</option><option value="8">Television — 8 kg</option><option value="65">Washing machine — 65 kg</option><option value="1">Other item — enter a weight below</option></select></label><label class="modal-field">Number of items<input id="impactQuantity" type="number" min="1" max="1000" value="1"></label><label class="modal-field">Override weight per item (kg, optional)<input id="impactWeight" type="number" min="0.01" max="1000" step="0.01" placeholder="Use category estimate"></label><button class="button button-green full-button" id="impactCalculate" type="button">Calculate estimate →</button><div class="impact-result" id="impactResult" aria-live="polite" hidden></div><p class="modal-footnote">Assumptions: category weights are illustrative defaults, not measured product weights. The result represents estimated mass diverted only if the item is actually collected through a suitable route.</p></dialog>
+
+  <dialog class="modal" id="finderModal"><form method="dialog" class="modal-close-form"><button class="modal-close" aria-label="Close">×</button></form><div class="eyebrow">COLLECTION ROUTE FINDER</div><h2>Explore local options.</h2><p class="modal-intro">Search a place or postal code. This opens a third-party map search; EcoCycle does not verify listings or opening hours.</p><label class="modal-field">Location or postal code<input id="locationQuery" type="text" placeholder="e.g. Bengaluru 560001" autocomplete="postal-code"></label><label class="modal-field">What are you looking for?<select id="locationType"><option value="electronic waste recycling">E-waste recycling</option><option value="battery recycling">Battery collection</option><option value="computer repair donation">Repair or donation</option><option value="electronic waste collection centre">E-waste collection centre</option></select></label><button class="button button-green full-button" id="findPlaces" type="button">Search Google Maps ↗</button><button class="button button-outline full-button" id="findPlacesOsm" type="button">Try OpenStreetMap instead ↗</button><div class="finder-note" id="finderNote" aria-live="polite">Confirm acceptance of your exact item and any fees directly with the service provider.</div></dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</body>
+</html>

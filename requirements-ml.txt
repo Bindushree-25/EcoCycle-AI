@@ -1,0 +1,2 @@
+# ML runtime is installed by requirements.txt for a one-step setup.
+-r requirements.txt

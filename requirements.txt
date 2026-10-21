@@ -1,0 +1,6 @@
+Flask>=3.0,<4.0
+Pillow>=10.0,<13.0
+numpy>=1.26,<2.0
+huggingface_hub>=0.27,<1.0
+keras>=3.8,<4.0
+tensorflow>=2.16,<2.20
