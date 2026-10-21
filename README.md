@@ -15,9 +15,7 @@ EcoCycle AI combines a redesigned responsive interface with a Flask API, a Keras
 ### AI E-Waste Analyzer
 ![EcoCycle AI Analyzer](docs/images/analyzer-example.png)
 
-### Project Banner
-![EcoCycle AI Banner](docs/images/ecocycle-banner.png)
-## What is implemented
+
 
 - **Responsive product UI:** forest-green, sage, and warm-ivory design system; accessible labels; keyboard-friendly forms; mobile navigation; reduced-motion support.
 - **Image upload flow:** JPG/PNG/WebP validation, 8 MB limit, preview, drag-and-drop, and clear server-side errors.
