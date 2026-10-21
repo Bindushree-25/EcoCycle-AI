@@ -8,7 +8,15 @@
 EcoCycle AI combines a redesigned responsive interface with a Flask API, a Keras e-waste classifier downloaded automatically from a public Hugging Face model repository on the first scan, category-specific handling guidance, a decision assistant, a transparent waste-mass estimator, OpenStreetMap search hand-off, browser-local scan history, and JSON report export.
 
 > **First-run requirement:** you do not need to supply a dataset, train a model, or create an API key. Run `START_ECOCYCLE.bat` on Windows. The launcher installs dependencies; the first image scan downloads the public model and caches it locally. An internet connection is required for setup/model download. This community model has not been independently benchmarked by this project; confirm predictions manually and do not use them as a safety certification.
+---
 
+## 📸 Project Screenshots
+
+### AI E-Waste Analyzer
+![EcoCycle AI Analyzer](docs/images/analyzer-example.png)
+
+### Project Banner
+![EcoCycle AI Banner](docs/images/ecocycle-banner.png)
 ## What is implemented
 
 - **Responsive product UI:** forest-green, sage, and warm-ivory design system; accessible labels; keyboard-friendly forms; mobile navigation; reduced-motion support.
