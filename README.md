@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="docs/images/ecocycle-banner.png" alt="EcoCycle AI banner" width="100%">
+</p>
 # EcoCycle AI — Flagship Studio Release
 
 **A sustainability-tech web application for e-waste image classification, safer next-step guidance, and circular-use decisions.**
